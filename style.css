@@ -1,0 +1,272 @@
+/* Importing Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: #fef9f3;
+    font-family: 'Varela Round', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #000;
+    color: #fff;
+    height: 65px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 100%;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav .brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+nav .brand img {
+    width: 44px;
+    margin-right: 8px;
+}
+
+/* Main Container */
+.container {
+    min-height: 72vh;
+    width: 85%;
+    margin: 30px auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Song List */
+.songList h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f5f5f5;
+}
+
+.songItemContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.songItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 34px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.songItem:hover {
+    background-color: #ddd;
+    transform: translateY(-5px);
+}
+
+.songItem img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.songName {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.songlistplay {
+    display: flex;
+    align-items: center;
+}
+
+.timestamp {
+    margin-right: 20px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.timestamp i {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.timestamp i:hover {
+    color: #000;
+}
+
+/* Bottom Footer Section */
+.bottom {
+    position: sticky;
+    bottom: 0;
+    background-color: #000;
+    color: #fff;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.icons {
+    margin-top: 10px;
+}
+
+.icons i {
+    color: #fff;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icons i:hover {
+    color: #f1c40f;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#myProgressBar {
+    width: 80vw;
+    margin: 10px 0;
+    appearance: none;
+    background: #f1c40f;
+    height: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#myProgressBar::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#myProgressBar::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Song Info Section */
+.songInfo {
+    font-family: 'Ubuntu', sans-serif;
+    position: absolute;
+    left: 10vw;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    transition: opacity 0.4s ease-in;
+}
+
+.songInfo img {
+    width: 42px;
+    height: 42px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+}
+
+.songInfo img.show {
+    opacity: 1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .songItem img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .songItem {
+        padding: 10px 15px;
+    }
+
+    .songName {
+        font-size: 1rem;
+    }
+
+    #myProgressBar {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 576px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .brand {
+        font-size: 1.2rem;
+    }
+
+    .songItem {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .songlistplay {
+        margin-top: 10px;
+    }
+
+    .bottom {
+        height: auto;
+    }
+
+    #myProgressBar {
+        width: 95vw;
+    }
+}
